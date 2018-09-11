@@ -23,7 +23,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class DriverDO
 {
 
-    @Id
+    @Override
+	public String toString() {
+		return "DriverDO [id=" + id + ", dateCreated=" + dateCreated + ", username=" + username + ", password="
+				+ password + ", deleted=" + deleted + ", coordinate=" + coordinate + ", dateCoordinateUpdated="
+				+ dateCoordinateUpdated + ", onlineStatus=" + onlineStatus + "]";
+	}
+
+
+	@Id
     @GeneratedValue
     private Long id;
 
@@ -54,7 +62,7 @@ public class DriverDO
     private OnlineStatus onlineStatus;
 
 
-    private DriverDO()
+    public DriverDO()
     {
     }
 
@@ -129,5 +137,23 @@ public class DriverDO
         this.coordinate = coordinate;
         this.dateCoordinateUpdated = ZonedDateTime.now();
     }
+
+
+	public void setDateCreated(ZonedDateTime now) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setUsername(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setPassword(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
